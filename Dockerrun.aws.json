@@ -10,10 +10,7 @@
             ],
             "memory": 512,
             "essential": true, 
-            "image": "selenium/node-chrome", 
-            "links": [
-                "selenium-hub:hub"
-            ], 
+            "image": "selenium/node-chrome:latest", 
             "mountPoints": [
                 {
                     "containerPath": "/dev/shm", 
@@ -25,27 +22,30 @@
         {
             "environment": [
                 {
-                    "name": "HUB_PORT_4444_TCP_ADDR", 
+                    "name": "HUB_HOST", 
                     "value": "hub"
                 }
             ],
             "memory": 512,
             "essential": true, 
-            "image": "selenium/node-firefox", 
-            "links": [
-                "selenium-hub:hub"
+            "image": "selenium/node-firefox:latest", 
+            "mountPoints": [
+                {
+                    "containerPath": "/dev/shm", 
+                    "sourceVolume": "DevShm"
+                }
             ], 
             "name": "firefox"
         }, 
         {
-            "essential": true, 
-            "image": "selenium/hub", 
-            "name": "selenium-hub",
             "memory": 512,
+            "essential": true, 
+            "image": "selenium/hub:latest", 
+            "name": "hub", 
             "portMappings": [
                 {
-                    "containerPort": 80,
-                    "hostPort": 80
+                    "containerPort": 4444, 
+                    "hostPort": 4444
                 }
             ]
         }
