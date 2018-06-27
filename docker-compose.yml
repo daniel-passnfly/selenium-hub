@@ -24,4 +24,4 @@ services:
   hub:
     image: selenium/hub:3.12.0-cobalt
     ports:
-      - "80:4444"
+      - "4444:4444"
