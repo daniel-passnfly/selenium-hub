@@ -10,7 +10,7 @@
             ],
             "memory": 512,
             "essential": true, 
-            "image": "selenium/node-chrome:latest", 
+            "image": "selenium/node-chrome:3.12.0-cobalt",
             "mountPoints": [
                 {
                     "containerPath": "/dev/shm", 
@@ -28,7 +28,7 @@
             ],
             "memory": 512,
             "essential": true, 
-            "image": "selenium/node-firefox:latest", 
+            "image": "selenium/node-firefox:3.12.0-cobalt",
             "mountPoints": [
                 {
                     "containerPath": "/dev/shm", 
@@ -40,12 +40,12 @@
         {
             "memory": 512,
             "essential": true, 
-            "image": "selenium/hub:latest", 
+            "image": "selenium/hub:3.12.0-cobalt",
             "name": "hub", 
             "portMappings": [
                 {
                     "containerPort": 4444, 
-                    "hostPort": 4444
+                    "hostPort": 80
                 }
             ]
         }
