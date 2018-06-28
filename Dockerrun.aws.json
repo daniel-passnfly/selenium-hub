@@ -2,45 +2,9 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "environment": [
-                {
-                    "name": "HUB_HOST", 
-                    "value": "hub"
-                }
-            ],
-            "memory": 512,
+            "memory": 1024,
             "essential": true, 
-            "image": "selenium/node-chrome:3.12.0-cobalt",
-            "mountPoints": [
-                {
-                    "containerPath": "/dev/shm", 
-                    "sourceVolume": "DevShm"
-                }
-            ], 
-            "name": "chrome"
-        }, 
-        {
-            "environment": [
-                {
-                    "name": "HUB_HOST", 
-                    "value": "hub"
-                }
-            ],
-            "memory": 512,
-            "essential": true, 
-            "image": "selenium/node-firefox:3.12.0-cobalt",
-            "mountPoints": [
-                {
-                    "containerPath": "/dev/shm", 
-                    "sourceVolume": "DevShm"
-                }
-            ], 
-            "name": "firefox"
-        }, 
-        {
-            "memory": 512,
-            "essential": true, 
-            "image": "selenium/hub:3.12.0-cobalt",
+            "image": "selenium/standalone-chrome:latest",
             "name": "hub", 
             "portMappings": [
                 {
@@ -48,14 +12,6 @@
                     "hostPort": 4444
                 }
             ]
-        }
-    ],
-    "volumes": [
-        {
-            "host": {
-                "sourcePath": "/dev/shm"
-            }, 
-            "name": "DevShm"
         }
     ]
 }
