@@ -1,17 +1,31 @@
 {
-    "AWSEBDockerrunVersion": 2,
-    "containerDefinitions": [
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "memory",
+      "host": {
+        "sourcePath": "/dev/shm"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "hub",
+      "memory": 1024,
+      "essential": true,
+      "image": "selenium/standalone-chrome:latest",
+      "portMappings": [
         {
-            "memory": 1024,
-            "essential": true, 
-            "image": "selenium/standalone-chrome:latest",
-            "name": "hub", 
-            "portMappings": [
-                {
-                    "containerPort": 4444, 
-                    "hostPort": 4444
-                }
-            ]
+          "containerPort": 4444,
+          "hostPort": 4444
         }
-    ]
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "memory",
+          "containerPath": "/dev/shm"
+        }
+      ]
+    }
+  ]
 }
