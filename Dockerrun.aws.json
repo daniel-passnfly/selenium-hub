@@ -11,7 +11,7 @@
   "containerDefinitions": [
     {
       "name": "hub",
-      "memory": 2982,
+      "memory": 3500,
       "essential": true,
       "image": "selenium/standalone-chrome:latest",
       "portMappings": [
