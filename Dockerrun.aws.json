@@ -10,7 +10,7 @@
     {
       "name": "downloads",
       "host": {
-        "sourcePath": "/bot/downloads"
+        "sourcePath": "/tmp"
       }
     }
   ],
@@ -33,7 +33,7 @@
         },
         {
           "sourceVolume": "downloads",
-          "containerPath": "/bot/downloads"
+          "containerPath": "/tmp"
         }
       ]
     }
