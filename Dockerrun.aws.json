@@ -6,6 +6,12 @@
       "host": {
         "sourcePath": "/dev/shm"
       }
+    },
+    {
+      "name": "downloads",
+      "host": {
+        "sourcePath": "/bot/downloads"
+      }
     }
   ],
   "containerDefinitions": [
@@ -24,6 +30,10 @@
         {
           "sourceVolume": "memory",
           "containerPath": "/dev/shm"
+        },
+        {
+          "sourceVolume": "downloads",
+          "containerPath": "/bot/downloads"
         }
       ]
     }
