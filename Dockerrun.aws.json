@@ -8,9 +8,9 @@
       }
     },
     {
-      "name": "downloads",
+      "name": "app",
       "host": {
-        "sourcePath": "/tmp"
+        "sourcePath": "/var/app/current"
       }
     }
   ],
@@ -32,8 +32,8 @@
           "containerPath": "/dev/shm"
         },
         {
-          "sourceVolume": "downloads",
-          "containerPath": "/tmp"
+          "sourceVolume": "app",
+          "containerPath": "/var/app/current"
         }
       ]
     }
