@@ -40,7 +40,8 @@
         {
           "name": "SE_OPTS",
           "value": "-port 80"
-        },
+        }
+      ]
     }
   ]
 }
